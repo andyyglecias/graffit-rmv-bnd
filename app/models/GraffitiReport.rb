@@ -7,7 +7,6 @@ class GraffitiReport
     @alderman_last_name = opts[:alderman_last_name]
   end
 
-  #populating ward number
   
   def get_ward_and_alderman
     response = HTTP.get("https://data.cityofchicago.org/resource/htai-wnw4.json?$q=#{alderman_last_name}")
