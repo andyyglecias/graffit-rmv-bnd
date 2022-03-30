@@ -1,7 +1,12 @@
 class GraffitiRequestsController < ApplicationController
   def index
-
-    @graffiti_report = GraffitiReport.new(
+    
+    if !params[:month] || !params[:year] || params[:alderman]
+      render json: {errors: "Please include all required parameters"},
+      status: :unprocessable_entity and return
+    end
+    
+     @graffiti_report = GraffitiReport.new(
       month: params[:month], 
       year: params[:year], 
       alderman_last_name: params[:alderman]
