@@ -1,0 +1,2 @@
+module GraffitiRequestsHelper
+end
